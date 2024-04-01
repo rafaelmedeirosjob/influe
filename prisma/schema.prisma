@@ -22,10 +22,11 @@ model User {
   role    Role     @default(USER)
   categories Category[]
   proposal Proposal[]
+  Sale          Sale[]
 }
 
 model Proposal {
-  id         Int        @id @default(autoincrement())
+  id         String        @id @default(cuid())
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
   title      String
@@ -33,6 +34,7 @@ model Proposal {
   author     User       @relation(fields: [authorId], references: [id])
   authorId   Int
   receiverId   Int
+  SaleItems    SaleItem[]
 }
 
 model Category {
@@ -40,6 +42,25 @@ model Category {
   name  String @unique
   description  String
   users User[]
+}
+
+model Sale {
+  id                String     @id @default(cuid())
+  userId            Int
+  user              User       @relation(fields: [userId], references: [id])
+  checkoutSessionId String
+  createdAt         DateTime   @default(now())
+  updatedAt         DateTime   @updatedAt
+  SaleItems         SaleItem[]
+}
+
+model SaleItem {
+  id        String  @id @default(cuid())
+  saleId    String
+  sale      Sale    @relation(fields: [saleId], references: [id])
+  proposalId String
+  proposal   Proposal @relation(fields: [proposalId], references: [id])
+  quantity  Int
 }
 
 enum Role {
