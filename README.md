@@ -8,7 +8,7 @@ Key Features:
 - 🔐 Next-auth v5 (Auth.js)
 - 🚀 Next.js 14 with server actions
 - 🔑 Credentials Provider
-- 🌐 OAuth Provider (Social login with Google & GitHub)
+- 🌐 OAuth Provider (Social login with instagram & twitter)
 - 🔒 Forgot password functionality
 - ✉️ Email verification
 - 📱 Two factor verification
@@ -37,6 +37,14 @@ Key Features:
 - 🔑 Change password with old password confirmation in Settings page
 - 🔔 Enable/disable two-factor auth in Settings page
 - 🔄 Change user role in Settings page (for development purposes only)
+
+In developing:
+- 💻 Dashboard for influencers
+- 💻 CRUD proposals
+- 💻 Search influencers
+- 💻 Posts Help
+
+
 
 ### Prerequisites
 
