@@ -1,10 +1,8 @@
-# Next Auth v5 - Advanced Guide (2024)
+# Influe 🔍🚀
 
-![image](https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide/assets/23248726/d0175397-8c3f-4e82-91c4-78c14f29bb81)
+This a personal project for influencers and companies match
 
-This is a repository for Next Auth v5 - Advanced Guide (2024)
-
-[VIDEO TUTORIAL](https://youtu.be/1MTyCvS05V4)
+(this project is being developed)
 
 Key Features:
 - 🔐 Next-auth v5 (Auth.js)
@@ -47,7 +45,7 @@ Key Features:
 ### Cloning the repository
 
 ```shell
-git clone https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide.git
+git clone https://github.com/rafaelmedeirosjob/influe.git
 ```
 
 ### Install packages
