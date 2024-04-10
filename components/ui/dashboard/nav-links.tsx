@@ -1,22 +1,18 @@
 'use client';
-import {
-  GroupIcon,
-  BoxIcon,
-  BellIcon,
-} from '@radix-ui/react-icons';
+import { MdScheduleSend } from "react-icons/md";
+import { IoBarChartSharp } from "react-icons/io5";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 // Map of links to display in the side navigation.
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: 'Home', href: '/dashboard', icon: BoxIcon },
+  { name: 'Metrics', href: '/dashboard', icon: IoBarChartSharp },
   {
-    name: 'Invoices',
-    href: '/dashboard/invoices',
-    icon: BellIcon,
+    name: 'Proposes',
+    href: '/dashboard/proposes',
+    icon: MdScheduleSend,
   },
-  { name: 'Customers', href: '/dashboard/customers', icon: GroupIcon },
 ];
 
 export default function NavLinks() {
