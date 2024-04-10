@@ -28,12 +28,13 @@ export const UserButton = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar>
+<div className="flex h-[48px] w-full grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-gray-600 md:flex-none md:justify-start md:p-2 md:px-3">
+<Avatar>
           <AvatarImage src={user?.image || ""} />
-          <AvatarFallback className="bg-sky-500">
+          <AvatarFallback className="bg-gray-500">
             <FaUser className="text-white" />
           </AvatarFallback>
-        </Avatar>
+        </Avatar>Account</div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="end">
           <DropdownMenuItem>
