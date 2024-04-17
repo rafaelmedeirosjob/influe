@@ -4,6 +4,11 @@ This a personal project for influencers and companies match
 
 (this project is being developed)
 
+You can see the project up in this link : https://influe.vercel.app/
+
+To login in development, the application not have SMTP server to send confirmation code and send two auth code, because this, i set one user for login in develop.
+
+
 Key Features:
 - 🔐 Next-auth v5 (Auth.js)
 - 🚀 Next.js 14 with server actions
@@ -24,21 +29,15 @@ Key Features:
 - 🔍 Exploring next.js middleware
 - 📈 Extending & Exploring next-auth session
 - 🔄 Exploring next-auth callbacks
-- 👤 useCurrentUser hook
-- 🛂 useRole hook
-- 🧑 currentUser utility
-- 👮 currentRole utility
-- 🖥️ Example with server component
-- 💻 Example with client component
-- 👑 Render content for admins using RoleGate component
-- 🛡️ Protect API Routes for admins only
-- 🔐 Protect Server Actions for admins only
 - 📧 Change email with new verification in Settings page
 - 🔑 Change password with old password confirmation in Settings page
 - 🔔 Enable/disable two-factor auth in Settings page
 - 🔄 Change user role in Settings page (for development purposes only)
 
 In developing:
+- 🛡️ Protect API Routes for admins only
+- 🔐 Protect Server Actions for admins only
+- 👑 Render content for admins using RoleGate component
 - 💻 Dashboard for influencers
 - 💻 CRUD proposals
 - 💻 Search influencers
