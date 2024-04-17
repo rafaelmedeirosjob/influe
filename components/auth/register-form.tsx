@@ -13,10 +13,11 @@ import {
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,  
+  FormMessage,
 } from "@/components/ui/form";
 import { CardWrapper } from "@/components/auth/card-wrapper"
 import { Button } from "@/components/ui/button";
+import  {Checkbox}  from "@/components/ui/checkbox";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { register } from "@/actions/register";
@@ -25,11 +26,14 @@ export const RegisterForm = () => {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
+  const [isChecked] = useState<boolean | undefined>(false);
+
 
   const form = useForm<z.infer<typeof RegisterSchema>>({
     resolver: zodResolver(RegisterSchema),
     defaultValues: {
       email: "",
+      isCompany: false,
       password: "",
       name: "",
     },
@@ -38,7 +42,7 @@ export const RegisterForm = () => {
   const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
     setError("");
     setSuccess("");
-    
+    console.log(values)
     startTransition(() => {
       register(values)
         .then((data) => {
@@ -56,7 +60,7 @@ export const RegisterForm = () => {
       showSocial
     >
       <Form {...form}>
-        <form 
+        <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-6"
         >
@@ -91,6 +95,18 @@ export const RegisterForm = () => {
                       placeholder="john.doe@example.com"
                       type="email"
                     />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="isCompany"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                  <Checkbox defaultChecked={isChecked} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
