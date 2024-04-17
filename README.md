@@ -10,28 +10,19 @@ To login in development, the application not have SMTP server to send confirmati
 
 
 Key Features:
-- 🔐 Next-auth v5 (Auth.js)
-- 🚀 Next.js 14 with server actions
-- 🔑 Credentials Provider
-- ✅ Verification component
-- ⚠️ Error component
-- 🔘 Login button
-- 🚪 Logout button
-- 🚧 Role Gate
-- 🔍 Exploring next.js middleware
-- 📈 Extending & Exploring next-auth session
-- 🔄 Exploring next-auth callbacks
-- 🔒 Forgot password functionality
-- ✉️ Email verification
-- 📱 Two factor verification
-- 👥 User roles (Admin & User)
-- 🔓 Login component (Opens in redirect or modal)
-- 📝 Register component
-- 🤔 Forgot password component
-- 📧 Change email with new verification in Settings page
-- 🔑 Change password with old password confirmation in Settings page
-- 🔔 Enable/disable two-factor auth in Settings page
-- 🔄 Change user role in Settings page (for development purposes only)
+-  Next-auth v5
+-  Next.js 14 
+-  Credentials Provider
+-  Forgot password functionality
+-  Email verification
+-  Two factor verification
+-  User roles (Admin & User)
+-  Register component
+-  Forgot password component
+-  Change email with new verification
+-  Change password with old password
+-  Enable/disable two-factor 
+-  Change user role
 
 In developing:
 - 💻 Category for the user aplication, if the user is a company or influencer
@@ -39,8 +30,6 @@ In developing:
 In backlog:
 - 🛡️ Protect API Routes for admins only
 - 🌐 OAuth Provider (Social login with instagram & twitter)
-- 🔐 Protect Server Actions for admins only
-- 👑 Render content for admins using RoleGate component
 - 💻 Dashboard with metrics for influencers
 - 💻 Sugestions posts with AI
 - 💻 CRUD proposals
