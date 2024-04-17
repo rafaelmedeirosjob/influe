@@ -13,14 +13,6 @@ Key Features:
 - 🔐 Next-auth v5 (Auth.js)
 - 🚀 Next.js 14 with server actions
 - 🔑 Credentials Provider
-- 🌐 OAuth Provider (Social login with instagram & twitter)
-- 🔒 Forgot password functionality
-- ✉️ Email verification
-- 📱 Two factor verification
-- 👥 User roles (Admin & User)
-- 🔓 Login component (Opens in redirect or modal)
-- 📝 Register component
-- 🤔 Forgot password component
 - ✅ Verification component
 - ⚠️ Error component
 - 🔘 Login button
@@ -29,19 +21,31 @@ Key Features:
 - 🔍 Exploring next.js middleware
 - 📈 Extending & Exploring next-auth session
 - 🔄 Exploring next-auth callbacks
+- 🔒 Forgot password functionality
+- ✉️ Email verification
+- 📱 Two factor verification
+- 👥 User roles (Admin & User)
+- 🔓 Login component (Opens in redirect or modal)
+- 📝 Register component
+- 🤔 Forgot password component
 - 📧 Change email with new verification in Settings page
 - 🔑 Change password with old password confirmation in Settings page
 - 🔔 Enable/disable two-factor auth in Settings page
 - 🔄 Change user role in Settings page (for development purposes only)
 
 In developing:
+- 💻 Category for the user aplication, if the user is a company or influencer
+
+In backlog:
 - 🛡️ Protect API Routes for admins only
+- 🌐 OAuth Provider (Social login with instagram & twitter)
 - 🔐 Protect Server Actions for admins only
 - 👑 Render content for admins using RoleGate component
-- 💻 Dashboard for influencers
+- 💻 Dashboard with metrics for influencers
+- 💻 Sugestions posts with AI
 - 💻 CRUD proposals
-- 💻 Search influencers
-- 💻 Posts Help
+- 💻 Search influencers with price per publication
+
 
 
 
@@ -70,11 +74,11 @@ DIRECT_URL=
 
 AUTH_SECRET=
 
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
+TIKTOK_CLIENT_ID=
+TIKTOK_CLIENT_SECRET=
 
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
+INSTAGRAM_CLIENT_ID=
+INSTAGRAM_CLIENT_SECRET=
 
 RESEND_API_KEY=
 
