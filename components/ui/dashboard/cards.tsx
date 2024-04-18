@@ -1,5 +1,5 @@
 import { ClockIcon, NotionLogoIcon, GroupIcon, ActivityLogIcon } from "@radix-ui/react-icons";
-import { lusitana } from '@/components/ui/fonts';
+import { lusitana } from '@/lib/fonts';
 
 const iconMap = {
   collected: NotionLogoIcon,

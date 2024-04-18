@@ -1,5 +1,5 @@
 import { HiDevicePhoneMobile } from "react-icons/hi2";
-import { lusitana } from "@/components/ui/fonts"
+import { lusitana } from "@/lib/fonts"
 export default function InflueLogo() {
   return (
     <div
