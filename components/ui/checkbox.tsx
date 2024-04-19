@@ -1,14 +1,14 @@
-import React, { forwardRef } from "react";
+import * as React from "react"
 import { CheckIcon } from "@radix-ui/react-icons";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { useFormContext } from "react-hook-form";
 
-interface CheckboxProps {
+export interface CheckboxProps {
   defaultChecked?: boolean;
 }
 
-const Checkbox = () => forwardRef<HTMLButtonElement, CheckboxProps>(
+const Checkbox = React.forwardRef<HTMLButtonElement, CheckboxProps>(
   ({ defaultChecked }, ref) => {
     const { setValue } = useFormContext(); // Obtém a função setValue do react-hook-form
 
@@ -35,8 +35,9 @@ const Checkbox = () => forwardRef<HTMLButtonElement, CheckboxProps>(
           I am a company
         </LabelPrimitive.Label>
       </div>
-    );
+    )
   }
-);
+)
+Checkbox.displayName = "Checkbox"
 
 export default Checkbox;
