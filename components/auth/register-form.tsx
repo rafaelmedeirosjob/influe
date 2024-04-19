@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/form";
 import { CardWrapper } from "@/components/auth/card-wrapper"
 import { Button } from "@/components/ui/button";
-import  {Checkbox}  from "@/components/ui/checkbox";
+import  Checkbox from "@/components/ui/checkbox";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { register } from "@/actions/register";
