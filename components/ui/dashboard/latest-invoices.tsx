@@ -1,8 +1,8 @@
 import { GridIcon } from '@radix-ui/react-icons'; 
 import clsx from 'clsx';
 import Image from 'next/image';
-import { lusitana } from '@/components/ui/fonts';
-import { LatestInvoice } from '@/components/ui/definitions';
+import { lusitana } from '@/lib/fonts';
+import { LatestInvoice } from '@/lib/definitions';
 export default async function LatestInvoices({
   latestInvoices,
 }: {
