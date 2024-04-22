@@ -13,3 +13,10 @@ export const getCountAllProposes = async () => {
   
     return null;
   };
+
+  export const getOnePropose = async () => {
+  
+    const proposes = await getAllProposes();
+
+    return proposes.length
+  };
