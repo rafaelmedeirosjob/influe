@@ -1,8 +1,8 @@
-import { getAllProposes } from "@/data/metrics";
+import { getAllProposesPending } from "@/data/metrics";
 
 export const getCountAllProposes = async () => {
   
-    const proposes = await getAllProposes();
+    const proposes = await getAllProposesPending();
   
     if (proposes) {
         return [{
