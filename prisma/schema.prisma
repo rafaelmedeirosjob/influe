@@ -92,6 +92,7 @@ model Proposal {
   updatedAt  DateTime   @updatedAt
   title      String
   published  Boolean    @default(false)
+  status     String
   author     User       @relation(fields: [authorId], references: [id])
   authorId   String
   receiverId   String
