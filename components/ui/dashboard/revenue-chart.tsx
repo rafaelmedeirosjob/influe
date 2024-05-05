@@ -2,7 +2,6 @@ import { generateYAxis } from '@/lib/utils';
 import { FaCalendarAlt } from "react-icons/fa";
 import { lusitana } from '@/lib/fonts'
 import { Revenue } from '@/lib/definitions';
-import { getCountAllProposes } from '@/lib/metrics';
 // This component is representational only.
 // For data visualization UI, check out:
 // https://www.tremor.so/
@@ -10,7 +9,10 @@ import { getCountAllProposes } from '@/lib/metrics';
 // https://airbnb.io/visx/
 
 export default async function RevenueChart() { // Make component async, remove the props
-  const revenue = await getCountAllProposes(); // Fetch data inside the component
+  const revenue = [{
+    month: 'September', 
+    revenue: 1
+}]; // Fetch data inside the component
   
   const chartHeight = 350;
    const { yAxisLabels, topLabel } = {
