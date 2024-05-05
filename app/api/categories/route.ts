@@ -1,31 +1,37 @@
-import { randomUUID } from "crypto"
 import { NextRequest } from "next/server"
-import { db } from "@/lib/db"
+import { getCategories } from "@/data/categories"
 
-interface ListCategoriesRequest extends NextRequest { }
-
-async function getCategories(request: ListCategoriesRequest) {
-  let response
-
-  // get categories from prisma
-  const categories = await db.category.findMany()
-
-  return new Response(JSON.stringify({ categories }))
+interface CategoryResponse {
+  categoriesEntities: {
+    id: string
+    name: string
+    description: string
+    isActive: boolean
+    createdAt: Date
+    updatedAt: Date
+  }[]
 }
 
-interface CreateCategoryRequest extends NextRequest { }
-
-async function createCategory(request: CreateCategoryRequest) {
-  const { name, description } = await request.json()
-
-  const product = await db.category.create({
-    data: {
-      name,
-      description
-    }
-  })
-
-  return new Response(JSON.stringify({ product }))
+export interface Category {
+  value: string
+  name: string
 }
 
-export { getCategories as GET, createCategory as POST }
+async function getActiveCategories() {
+
+  const categoriesEntities = await getCategories()
+  const response = new Response(JSON.stringify({ categoriesEntities }))
+  let categories = [{}];
+  if (response.ok) {
+    const { categoriesEntities: receivedCategories } = await response.json() as CategoryResponse
+    const categoriesFormatted = receivedCategories.map(category => ({
+      value: category.name.toLowerCase(),
+      name: category.name
+    }))
+    categories = categoriesFormatted
+  }
+
+  return categories
+}
+
+export { getActiveCategories as GET }

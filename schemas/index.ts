@@ -1,6 +1,21 @@
 import * as z from "zod";
 import { UserRole } from "@prisma/client";
 
+interface CategoryResponse {
+  categories: {
+    id: string
+    name: string
+    description: string
+    createdAt: Date
+    updatedAt: Date
+  }[]
+}
+
+export interface Category {
+  value: string
+  name: string
+}
+
 export const SettingsSchema = z.object({
   name: z.optional(z.string()),
   category: z.optional(z.string()),
@@ -52,6 +67,10 @@ export const LoginSchema = z.object({
   code: z.optional(z.string()),
 });
 
+const ItemSchema = z.object({
+  // Define your object schema here
+});
+
 export const RegisterSchema = z.object({
   email: z.string().email({
     message: "Email is required",
@@ -60,6 +79,7 @@ export const RegisterSchema = z.object({
   password: z.string().min(6, {
     message: "Minimum 6 characters required",
   }),
+  categories: z.array(ItemSchema).nonempty(),
   name: z.string().min(1, {
     message: "Name is required",
   }),
