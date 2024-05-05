@@ -4,45 +4,37 @@ This a personal project for influencers and companies match
 
 (this project is being developed)
 
+You can see the project up in this link : https://influe.vercel.app/
+
+To login in development, the application not have SMTP server to send confirmation code and send two auth code, because this, i set one user for login in develop.
+
+
 Key Features:
-- 🔐 Next-auth v5 (Auth.js)
-- 🚀 Next.js 14 with server actions
-- 🔑 Credentials Provider
-- 🌐 OAuth Provider (Social login with instagram & twitter)
-- 🔒 Forgot password functionality
-- ✉️ Email verification
-- 📱 Two factor verification
-- 👥 User roles (Admin & User)
-- 🔓 Login component (Opens in redirect or modal)
-- 📝 Register component
-- 🤔 Forgot password component
-- ✅ Verification component
-- ⚠️ Error component
-- 🔘 Login button
-- 🚪 Logout button
-- 🚧 Role Gate
-- 🔍 Exploring next.js middleware
-- 📈 Extending & Exploring next-auth session
-- 🔄 Exploring next-auth callbacks
-- 👤 useCurrentUser hook
-- 🛂 useRole hook
-- 🧑 currentUser utility
-- 👮 currentRole utility
-- 🖥️ Example with server component
-- 💻 Example with client component
-- 👑 Render content for admins using RoleGate component
-- 🛡️ Protect API Routes for admins only
-- 🔐 Protect Server Actions for admins only
-- 📧 Change email with new verification in Settings page
-- 🔑 Change password with old password confirmation in Settings page
-- 🔔 Enable/disable two-factor auth in Settings page
-- 🔄 Change user role in Settings page (for development purposes only)
+-  Next-auth v5
+-  Next.js 14 
+-  Credentials Provider
+-  Forgot password functionality
+-  Email verification
+-  Two factor verification
+-  User roles (Admin & User)
+-  Register component
+-  Forgot password component
+-  Change email with new verification
+-  Change password with old password
+-  Enable/disable two-factor 
+-  Change user role
 
 In developing:
-- 💻 Dashboard for influencers
+- 💻 Category for the user aplication, if the user is a company or influencer
+
+In backlog:
+- 🛡️ Protect API Routes for admins only
+- 🌐 OAuth Provider (Social login with instagram & twitter)
+- 💻 Dashboard with metrics for influencers
+- 💻 Sugestions posts with AI
 - 💻 CRUD proposals
-- 💻 Search influencers
-- 💻 Posts Help
+- 💻 Search influencers with price per publication
+
 
 
 
@@ -71,11 +63,11 @@ DIRECT_URL=
 
 AUTH_SECRET=
 
-GITHUB_CLIENT_ID=
-GITHUB_CLIENT_SECRET=
+TIKTOK_CLIENT_ID=
+TIKTOK_CLIENT_SECRET=
 
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
+INSTAGRAM_CLIENT_ID=
+INSTAGRAM_CLIENT_SECRET=
 
 RESEND_API_KEY=
 
