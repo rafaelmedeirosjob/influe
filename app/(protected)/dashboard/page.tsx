@@ -2,12 +2,12 @@ import { Card } from '@/components/ui/dashboard/cards';
 import RevenueChart from '@/components/ui/dashboard/revenue-chart';
 import LatestInvoices from '@/components/ui/dashboard/latest-invoices';
 import { lusitana } from '@/lib/fonts';
-import { getCountAllProposes } from '@/lib/dashboard';
+import { getCountAllProposesPending } from '@/data/dashboard';
 import { Suspense } from 'react';
 import { RevenueChartSkeleton } from '@/components/ui/skeletons';
 
 export default async function Page() {
-    const countProposesPending = await getCountAllProposes(); 
+    const countProposesPending = await getCountAllProposesPending(); 
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
