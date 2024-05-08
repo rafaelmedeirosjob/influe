@@ -16,9 +16,13 @@ export interface Category {
   name: string
 }
 
+const ItemSchema = z.object({
+  // Define your object schema here
+});
+
 export const SettingsSchema = z.object({
   name: z.optional(z.string()),
-  category: z.optional(z.string()),
+  categories: z.array(ItemSchema).nonempty(),
   isTwoFactorEnabled: z.optional(z.boolean()),
   email: z.optional(z.string().email()),
   password: z.optional(z.string().min(6)),
@@ -65,10 +69,6 @@ export const LoginSchema = z.object({
     message: "Password is required",
   }),
   code: z.optional(z.string()),
-});
-
-const ItemSchema = z.object({
-  // Define your object schema here
 });
 
 export const RegisterSchema = z.object({
