@@ -36,22 +36,6 @@ import { useCurrentUser } from "@/hooks/use-current-user";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 
-
-interface CategoryResponse {
-  categories: {
-    id: string
-    name: string
-    description: string
-    createdAt: Date
-    updatedAt: Date
-  }[]
-}
-
-export interface Category {
-  value: string
-  name: string
-}
-
 const SettingsPage = async () => {
   const user = useCurrentUser();
 

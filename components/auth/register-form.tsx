@@ -1,7 +1,7 @@
 "use client";
 
 import * as z from "zod";
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -29,11 +29,56 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { register } from "@/actions/register";
 
-export const RegisterForm = (categories: any) => {
+export interface Category {
+  value: string
+  name: string
+}
+interface CategoryResponse {
+  categoriesEntities: {
+    id: string
+    name: string
+    description: string
+    isActive: boolean
+    createdAt: Date
+    updatedAt: Date
+  }[]
+}
+export const RegisterForm = () => {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
   const [isChecked] = useState<boolean | undefined>(false);
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // Perform your async fetch here (e.g., GET request)
+        const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/categories`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          next: { revalidate: 30 }
+        })
+        let categories: Category[] = []
+        if (!response) {
+          throw new Error('Failed to fetch categories');
+        }
+          const { categoriesEntities: receivedCategories } = await response.json() as CategoryResponse
+          const categoriesFormatted = receivedCategories.map(category => ({
+            value: category.name.toLowerCase(),
+            name: category.name
+          }))
+          categories = categoriesFormatted
+        setCategories(categories); // Update state with fetched categories
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
+
+    fetchData(); // Call the fetchData function when component mounts
+  }, []); // Empty dependency array ensures this effect runs only once on mount
 
 
   const form = useForm<z.infer<typeof RegisterSchema>>({
@@ -117,7 +162,6 @@ export const RegisterForm = (categories: any) => {
                     <Select
                       disabled={isPending}
                       onValueChange={field.onChange}
-                      defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
