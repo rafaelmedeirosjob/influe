@@ -61,6 +61,7 @@ export const RegisterForm = () => {
           },
           next: { revalidate: 30 }
         })
+        console.log(response)
         let categories: Category[] = []
         if (!response) {
           throw new Error('Failed to fetch categories');
@@ -70,6 +71,7 @@ export const RegisterForm = () => {
             value: category.name.toLowerCase(),
             name: category.name
           }))
+          console.log(categoriesFormatted)
           categories = categoriesFormatted
         setCategories(categories); // Update state with fetched categories
       } catch (error) {

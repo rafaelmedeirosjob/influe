@@ -49,7 +49,7 @@ interface CategoryResponse {
     updatedAt: Date
   }[]
 }
-const SettingsPage = async () => {
+export default function SettingsPage() {
   const user = useCurrentUser();
 
   const [error, setError] = useState<string | undefined>();
@@ -59,7 +59,7 @@ const SettingsPage = async () => {
   const [categories, setCategories] = useState<Category[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    async function getCategories() {
       try {
         // Perform your async fetch here (e.g., GET request)
         const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/categories`, {
@@ -85,7 +85,7 @@ const SettingsPage = async () => {
       }
     };
 
-    fetchData(); // Call the fetchData function when component mounts
+    getCategories(); // Call the fetchData function when component mounts
   }, []); // Empty dependency array ensures this effect runs only once on mount
 
 
@@ -271,5 +271,3 @@ const SettingsPage = async () => {
     </Card>
    );
 }
- 
-export default SettingsPage;
