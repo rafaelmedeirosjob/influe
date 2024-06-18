@@ -1,6 +1,6 @@
 import { RegisterForm } from "@/components/auth/register-form";
 
-const RegisterPage = () => {
+const RegisterPage = async () => {
   return ( 
     <RegisterForm />
   );
